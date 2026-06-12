@@ -23,8 +23,8 @@ $ cd consumer; composer install
 
 ```sh
 $ docker-compose up -d
-$ cd producer; php artisan serve
 ```
+Севис будет доступен на порту 8080
 
 ## API
 
