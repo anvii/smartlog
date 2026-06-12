@@ -106,16 +106,16 @@ class MessageController extends Controller
 
         extract($data);
 
+        // Validate status
         if (!in_array($status, ['created', 'queued', 'sent', 'delivered', 'error'])) {
             throw new \Exception('Invalid status');
         }
 
+        // Initialize $error if not set
+        $error ??= '';
+
         $message = Message::findOrFail($message_id);
-        $message->status = $status;
-        if (isset($error)) {
-            $message->error = $error;
-        }
-        $message->save();
+        $message->update(compact('status', 'error'));
 
         return [
             'status' => 'success',

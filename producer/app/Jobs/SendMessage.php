@@ -14,6 +14,7 @@ class SendMessage implements ShouldQueue, ShouldBeUnique
     use Queueable;
 
     public $uniqueFor = 3600*24;
+    public $tries = 0;
 
     /**
      * Create a new job instance.
