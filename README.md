@@ -22,7 +22,7 @@ $ cd consumer; composer install
 ## Запуск приложения
 
 ```sh
-$ docker compose up -d
+$ docker-compose up -d
 $ cd producer; php artisan serve
 ```
 
